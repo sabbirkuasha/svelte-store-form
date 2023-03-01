@@ -1,0 +1,46 @@
+<script>
+	import Table from '../../lib/common/Table.svelte';
+	export let data;
+
+	let { contacts } = data;
+	// console.log(contacts);
+</script>
+
+<h1 class="prose prose-slate p-5">Form</h1>
+
+<form method="POST">
+	<div class="flex flex-col flex-wrap gap-5 pl-5 w-1/2">
+		<input
+			type="text"
+			name="name"
+			placeholder="Type name here"
+			class="input w-full  input-primary"
+		/>
+		<input
+			type="text"
+			name="email"
+			placeholder="Type email here"
+			class="input w-full  input-primary"
+		/>
+		<input
+			type="text"
+			name="company"
+			placeholder="Type company here"
+			class="input w-full  input-primary"
+		/>
+		<input
+			type="text"
+			name="address"
+			placeholder="Type address here"
+			class="input w-full  input-primary"
+		/>
+
+		<button class="btn btn-primary">Place Order</button>
+	</div>
+</form>
+<div
+	class="w-4/5 p-5
+"
+>
+	<Table {contacts} />
+</div>
