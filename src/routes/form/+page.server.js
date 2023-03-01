@@ -23,8 +23,21 @@ export const actions = {
 
 		const formData = await request.formData(); // extracting form data
 
-		console.log(formData);
-
+		const id = crypto.randomUUID();
+		const name = formData.get('name');
+		const email = formData.get('email');
+		const job = formData.get('company');
+		const address = formData.get('address');
 		console.log(formData.get('name')); // Extracting specific field from the form data
+		console.log(id);
+
+		const contact = {
+			id,
+			name,
+			email,
+			job,
+			address
+		};
+		contacts.push(contact);
 	}
 };

@@ -26,10 +26,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each contacts as contact}
+			{#each contacts as contact, i}
 				<!-- row 1 -->
 				<tr>
-					<th>{contact.id}</th>
+					<!-- <th>{contact.id}</th> -->
+					<th>{i + 1}</th>
 					<td>{contact.name}</td>
 					<td>{contact.email}</td>
 					<td>{contact.job}</td>
