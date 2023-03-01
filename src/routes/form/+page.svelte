@@ -1,9 +1,10 @@
 <script>
 	import Table from '../../lib/common/Table.svelte';
 	export let data;
+	export let form;
 
 	let { contacts } = data;
-	// console.log(contacts);
+	console.log(form);
 </script>
 
 <h1 class="prose prose-slate p-5">Form</h1>

@@ -28,7 +28,7 @@ export const actions = {
 		const email = formData.get('email');
 		const job = formData.get('company');
 		const address = formData.get('address');
-		console.log(formData.get('name')); // Extracting specific field from the form data
+		// console.log(formData.get('name')); // Extracting specific field from the form data
 		console.log(id);
 
 		const contact = {
@@ -39,5 +39,9 @@ export const actions = {
 			address
 		};
 		contacts.push(contact);
+
+		return {
+			success: true
+		};
 	}
 };
