@@ -18,7 +18,7 @@ export const load = () => {
 
 // step 1 - creating action so that form data will be avaliable here
 export const actions = {
-	default: async ({ request }) => {
+	createForm: async ({ request }) => {
 		// check the whole request object
 		// console.log(request);
 

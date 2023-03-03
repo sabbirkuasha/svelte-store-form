@@ -9,7 +9,7 @@
 
 <h1 class="prose prose-slate p-5">Form</h1>
 
-<form method="POST">
+<form method="POST" action="?/createForm">
 	<div class="flex flex-col flex-wrap gap-5 pl-5 w-1/2">
 		<input
 			type="text"
