@@ -16,24 +16,28 @@
 			name="name"
 			placeholder="Type name here"
 			class="input w-full  input-primary"
+			value={form?.name ?? ''}
 		/>
 		<input
 			type="text"
 			name="email"
 			placeholder="Type email here"
 			class="input w-full  input-primary"
+			value={form?.email ?? ''}
 		/>
 		<input
 			type="text"
 			name="company"
 			placeholder="Type company here"
 			class="input w-full  input-primary"
+			value={form?.company ?? ''}
 		/>
 		<input
 			type="text"
 			name="address"
 			placeholder="Type address here"
 			class="input w-full  input-primary"
+			value={form?.address ?? ''}
 		/>
 
 		<button class="btn btn-primary">Place Order</button>

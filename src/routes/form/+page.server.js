@@ -1,4 +1,5 @@
 /** @type {import('./$types').Actions} */
+import { fail } from '@sveltejs/kit';
 
 let contacts = [
 	{
@@ -23,14 +24,27 @@ export const actions = {
 
 		const formData = await request.formData(); // extracting form data
 
-		const id = crypto.randomUUID();
 		const name = formData.get('name');
 		const email = formData.get('email');
 		const job = formData.get('company');
 		const address = formData.get('address');
 		// console.log(formData.get('name')); // Extracting specific field from the form data
-		console.log(id);
+		// console.log(id);
 
+		// Validation here
+		if (name.length < 2) {
+			return fail(400, {
+				error: true,
+				message: 'name must be at least two characters',
+				name,
+				email,
+				job,
+				address
+			});
+		}
+
+		console.log('validation passed');
+		const id = crypto.randomUUID();
 		const contact = {
 			id,
 			name,
