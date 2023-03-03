@@ -57,5 +57,21 @@ export const actions = {
 		return {
 			success: true
 		};
+	},
+	// delete button action
+	deleteInfo: async ({ request }) => {
+		// console.log('request clicked');
+		// console.log(request);
+
+		const formData = await request.formData();
+
+		const id = formData.get('id');
+		console.log('Selected id is: ' + id);
+
+		contacts = contacts.filter((contact) => contact.id != id);
+
+		return {
+			success: true
+		};
 	}
 };

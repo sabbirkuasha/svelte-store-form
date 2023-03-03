@@ -23,6 +23,7 @@
 				<th>email</th>
 				<th>Job</th>
 				<th>Address</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,6 +36,12 @@
 					<td>{contact.email}</td>
 					<td>{contact.job}</td>
 					<td>{contact.address}</td>
+					<td>
+						<form method="POST" action="?/deleteInfo">
+							<input name="id" type="hidden" hidden value={contact.id} />
+							<button class="btn btn-primary btn-circle ">X</button>
+						</form>
+					</td>
 				</tr>
 			{/each}
 		</tbody>
