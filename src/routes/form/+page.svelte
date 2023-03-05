@@ -1,12 +1,22 @@
 <script>
 	import Table from '../../lib/common/Table.svelte';
+
+	import { enhance } from '$app/forms';
+
+	import toast, { Toaster } from 'svelte-french-toast';
+
 	export let data;
-	export let form;
+	export let form = null;
+
+	$: !form?.error ? toast.success('It works!') : '';
+	$: form?.error ? toast.error('fill your form again') : '';
 
 	let { contacts } = data;
+	$: contacts;
 	console.log(form);
 </script>
 
+<Toaster />
 <h1 class="prose prose-slate p-5">Form</h1>
 
 <form method="POST" action="?/createForm">

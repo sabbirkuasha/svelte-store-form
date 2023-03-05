@@ -1,4 +1,5 @@
 <script>
+	import { enhance } from '$app/forms';
 	export let contacts;
 
 	let contact = [
@@ -37,7 +38,7 @@
 					<td>{contact.job}</td>
 					<td>{contact.address}</td>
 					<td>
-						<form method="POST" action="?/deleteInfo">
+						<form  method="POST" action="?/deleteInfo">
 							<input name="id" type="hidden" hidden value={contact.id} />
 							<button class="btn btn-primary btn-circle ">X</button>
 						</form>

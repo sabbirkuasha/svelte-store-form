@@ -54,6 +54,7 @@ export const actions = {
 		};
 		contacts.push(contact);
 
+		console.log('return success');
 		return {
 			success: true
 		};
