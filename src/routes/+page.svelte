@@ -23,6 +23,8 @@
 			phoneNumber = '+880';
 		}
 	}
+	export let data;
+	console.log(data);
 </script>
 
 <main>

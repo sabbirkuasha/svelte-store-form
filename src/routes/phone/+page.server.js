@@ -1,6 +1,7 @@
 /** @type {import('./$types').PageLoad} */
+import { redirect } from '@sveltejs/kit';
 
-export async function load({ fetch, request, url }) {
+export async function load({ fetch, request, url, locals }) {
 	let pageNum = url.searchParams.get('page');
 	console.log(pageNum);
 
