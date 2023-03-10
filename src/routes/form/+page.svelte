@@ -2,9 +2,9 @@
 	import Table from '../../lib/common/Table.svelte';
 
 	import { enhance } from '$app/forms';
-
+	import { onMount } from 'svelte';
 	import toast, { Toaster } from 'svelte-french-toast';
-
+	import { page } from '$app/stores';
 	export let data;
 	export let form = null;
 
