@@ -50,14 +50,17 @@
 	<a class="btn btn-circle" href="/navbar">navbar</a>
 	<a class="btn btn-circle" href="/women">Women</a>
 	<a class="btn btn-circle" href="/women/sub">Women-Sub</a>
+	<a class="btn btn-circle" href="/lazy">Lazy</a>
 </nav>
 
-<div class="ring">
-	<h1>Previous route was:</h1>
-	<span class="text-3xl">{prevRoute}</span>
+<div class="flex flex-row gap-10 justify-between px-10">
+	<div class="mt-5">
+		<button on:click={goBack} class="btn btn-secondary">Back</button>
+	</div>
+	<div class=" flex flex-row items-center gap-5 ">
+		<h1>Previous route was:</h1>
+		<span class="text-3xl">{prevRoute}</span>
+	</div>
 </div>
 
-<div class="mt-5">
-	<button on:click={goBack} class="btn btn-secondary">Back</button>
-</div>
 <slot />
