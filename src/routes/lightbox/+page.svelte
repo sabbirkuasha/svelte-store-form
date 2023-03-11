@@ -1,8 +1,8 @@
 <script>
-	import BiggerPicture from 'bigger-picture/svelte';
-
 	// import style
+	import BiggerPicture from 'bigger-picture/svelte';
 	import 'bigger-picture/css';
+
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
@@ -41,7 +41,6 @@
 	// function to open BiggerPicture
 	function openGallery(e) {
 		e.preventDefault();
-		//console.log(imageLinks);
 		bp.open({
 			items: imageLinks,
 			el: e.currentTarget
@@ -53,18 +52,21 @@
 	<h1>Light Box experiment...</h1>
 </div>
 
-<div id="tris" class="tris ">
+<div id="tris" class="tris ring overflow-hidden w-10">
 	{#if SingleProduct}
 		<a
 			href={SingleProduct.gallery[0].main_url}
 			data-img={SingleProduct.gallery[0].main_url}
 			data-thumb={SingleProduct.gallery[0].main_url}
+			data-width="780"
+			data-height="974"
 			data-alt="image description"
 		>
 			<img
 				srcset={SingleProduct.gallery[2].main_url}
 				src={SingleProduct.gallery[0].main_url}
 				alt="ima"
+				class="w-52"
 			/>
 		</a>
 		<a
@@ -72,11 +74,14 @@
 			data-img={SingleProduct.gallery[1].main_url}
 			data-thumb={SingleProduct.gallery[1].main_url}
 			data-alt="image description"
+			data-width="780"
+			data-height="974"
 		>
 			<img
 				srcset={SingleProduct.gallery[2].main_url}
 				src={SingleProduct.gallery[1].main_url}
 				alt="ima"
+				class="w-52"
 			/>
 		</a>
 		<a
@@ -84,18 +89,16 @@
 			data-img={SingleProduct.gallery[1].main_url}
 			data-thumb={SingleProduct.gallery[1].main_url}
 			data-alt="image description"
+			data-width="780"
+			data-height="974"
 		>
 			<img
 				srcset={SingleProduct.gallery[2].main_url}
 				src={SingleProduct.gallery[2].main_url}
 				alt="ima"
+				class="w-52"
 			/>
 		</a>
-
-		<!-- <Lightbox description="Simple lightbox">
-			<img src={SingleProduct.gallery[0].main_url} alt="Simple lightbox" />
-		</Lightbox> -->
-		<!-- Programmatically controlled lightbox without thumbnail -->
 	{:else}
 		<h1 class=" w-full text-center">Loading...</h1>
 	{/if}
