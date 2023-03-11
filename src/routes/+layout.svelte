@@ -50,7 +50,7 @@
 	<a class="btn btn-circle" href="/navbar">navbar</a>
 	<a class="btn btn-circle" href="/women">Women</a>
 	<a class="btn btn-circle" href="/women/sub">Women-Sub</a>
-	<a class="btn btn-circle" href="/lazy">Lazy</a>
+	<a class="btn btn-circle" href="/lightbox">Lightbox</a>
 </nav>
 
 <div class="flex flex-row gap-10 justify-between px-10">
