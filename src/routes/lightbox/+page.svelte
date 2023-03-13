@@ -27,25 +27,17 @@
 		allProductImages = SingleProduct?.gallery;
 		productCode = SingleProduct?.code;
 
+		// Bigger Picture - Initialize
 		bp = BiggerPicture({
 			target: document.body
 		});
 
-		// grab image links
+		// Bigger Picture - grab image links
 		imageLinks = document.querySelectorAll('#tris > a');
 		imageLinks.forEach((imageLink) => {
 			imageLink.addEventListener('click', openGallery);
 		});
 	});
-
-	// function to open BiggerPicture
-	function openGallery(e) {
-		e.preventDefault();
-		bp.open({
-			items: imageLinks,
-			el: e.currentTarget
-		});
-	}
 </script>
 
 <div class="p-5 text-center">
