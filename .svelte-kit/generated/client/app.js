@@ -20,12 +20,12 @@ export const dictionary = {
 	"/checkout": [~3],
 	"/form": [~4],
 	"/lazy": [~5],
-	"/lightbox": [6],
-	"/navbar": [7],
-	"/otp": [8],
-	"/phone": [~9],
-	"/[some]": [10],
-	"/[some]/[some]": [11]
+	"/navbar": [6],
+	"/otp": [7],
+	"/phone": [~8],
+	"/some": [9],
+	"/some/[some]": [10],
+	"/[lightbox]": [11]
 };
 
 export const hooks = {

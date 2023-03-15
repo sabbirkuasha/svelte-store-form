@@ -15,18 +15,6 @@
 	let bp;
 	let imageLinks;
 	onMount(async () => {
-		const rsp = await fetch(`https://app.deshal.net/api/getProductDetails/pushpo-kontok`, {
-			headers: {
-				Accept: 'application/json'
-			}
-		});
-
-		let response = await rsp.json();
-		SingleProduct = response.data;
-		console.log(SingleProduct);
-		allProductImages = SingleProduct?.gallery;
-		productCode = SingleProduct?.code;
-
 		// Bigger Picture - Initialize
 		bp = BiggerPicture({
 			target: document.body
@@ -38,10 +26,37 @@
 			imageLink.addEventListener('click', openGallery);
 		});
 	});
+
+	let fullFetch;
+	$: fullFetch = async function callFetch() {
+		const rsp = await fetch(`https://app.deshal.net/api/getProductDetails/pushpo-kontok`, {
+			headers: {
+				Accept: 'application/json'
+			}
+		});
+
+		let response = await rsp.json();
+		let SingleProduct2 = response.data;
+		console.log(SingleProduct2);
+		let allProductImages2 = SingleProduct2?.gallery;
+		let productCode2 = SingleProduct2?.code;
+
+		return { allProductImages2, productCode2 };
+	};
 </script>
+
+{#if fullFetch}
+	{fullFetch}
+{/if}
 
 <div class="p-5 text-center">
 	<h1>Light Box experiment...</h1>
+</div>
+
+<div class="flex flex-row flex-wrap gap-5">
+	<a class="btn btn-primary" href="/lightbox/surjyo-konya">Op1</a>
+	<a class="btn btn-primary" href="/lightbox/keki">Op2</a>
+	<a class="btn btn-primary" href="/lightbox/arupa">Op3</a>
 </div>
 
 <div id="tris" class="tris ring overflow-hidden w-10">
