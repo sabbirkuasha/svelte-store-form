@@ -35,6 +35,7 @@
 	"dependencies": {
 		"bigger-picture": "^1.1.7",
 		"daisyui": "^2.51.0",
+		"nprogress": "^0.2.0",
 		"simplelightbox": "^2.12.1",
 		"svelte-french-toast": "^1.0.3"
 	}

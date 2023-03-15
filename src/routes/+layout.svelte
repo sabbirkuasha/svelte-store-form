@@ -8,6 +8,10 @@
 
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+	NProgress.configure({ showSpinner: false });
+
 	onMount(async () => {
 		console.log('Hello world');
 		console.log($redirectPage);
@@ -17,6 +21,7 @@
 	$: prevRoute;
 
 	beforeNavigate(async () => {
+		NProgress.start();
 		console.log('before navigate function here');
 		console.log($page);
 		prevRoute = $page.url.href;
@@ -29,6 +34,7 @@
 	}
 
 	afterNavigate(async () => {
+		NProgress.done();
 		console.log('after navigate function here');
 		console.log($page);
 	});
@@ -42,6 +48,10 @@
 		console.log('this is redirect Route fucntion');
 	}
 </script>
+
+<svelte:head>
+	<title>Experiement {$page.data.title ? `| ${page.data.title}` : '| No Name'}</title>
+</svelte:head>
 
 <nav class="flex flex-row gap-5 p-2">
 	<a class="btn btn-circle" href="/phone">Phone</a>
@@ -64,3 +74,17 @@
 </div>
 
 <slot />
+
+<style>
+	#nprogress .bar {
+		background: rgb(51, 250, 1) !important;
+
+		position: fixed;
+		z-index: 1031;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 2px;
+	}
+</style>
