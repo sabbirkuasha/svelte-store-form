@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/[lightbox]/+page.svelte";
+export { default as component } from "../../../../src/routes/some/[some]/+page.svelte";
