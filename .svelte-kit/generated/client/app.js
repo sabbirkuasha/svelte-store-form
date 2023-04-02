@@ -18,16 +18,16 @@ export const server_loads = [];
 
 export const dictionary = {
 	"/": [~2],
-	"/checkout": [~3],
-	"/form": [~4],
-	"/lazy": [~5],
-	"/mailcrab": [~6],
-	"/navbar": [7],
-	"/otp": [8],
-	"/phone": [~9],
-	"/some": [10],
-	"/some/[some]": [11],
-	"/[lightbox]": [12]
+	"/checkout": [~4],
+	"/form": [~5],
+	"/lazy": [~6],
+	"/mailcrab": [~7],
+	"/navbar": [8],
+	"/otp": [9],
+	"/phone": [~10],
+	"/some": [11],
+	"/some/[some]": [12],
+	"/[lightbox]": [3]
 };
 
 export const hooks = {

@@ -3,16 +3,15 @@ import sendinblueTransport from 'nodemailer-sendinblue-transport';
 
 const transporter = nodemailer.createTransport(
 	new sendinblueTransport({
-		apiKey:
-			'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'
+		apiKey: '<YOUR-API_KEY>'
 	})
 );
 
 export async function mailPost(request) {
 	console.log('from send-email -------------------------------');
 	console.log(request);
-	const { name, email, message } = request.body;
-	let pdf = request.body?.pdf;
+	const { name, email, message, pdf } = request.body;
+	// let pdf = request.body?.pdf;
 	console.log('Consoling pdf ==============');
 	console.log(pdf);
 	// console.log(name);
@@ -28,7 +27,8 @@ export async function mailPost(request) {
 		attachments: [
 			{
 				filename: 'chess.pdf',
-				path: 'C:/Users/USER/Desktop/temp',
+				content: pdf.buffer,
+				// path: 'C:/Users/USER/Desktop/temp',
 				contentType: 'application/pdf'
 			}
 		]
